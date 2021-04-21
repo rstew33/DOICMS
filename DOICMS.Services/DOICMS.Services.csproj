@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DOICMS.Data\DOICMS.Data.csproj">
+      <Project>{1330079b-1bf6-455d-aa61-eeada6dfb35d}</Project>
+      <Name>DOICMS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOICMS.Models\DOICMS.Models.csproj">
+      <Project>{43891141-3e65-44a4-ba7a-ca21e56d1e05}</Project>
+      <Name>DOICMS.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

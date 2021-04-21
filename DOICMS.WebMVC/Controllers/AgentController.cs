@@ -1,4 +1,5 @@
 ﻿using DOICMS.Models;
+using DOICMS.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,11 +25,15 @@ namespace DOICMS.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(AgentCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+
+            var service = new AgentService();
+
+            service.CreateAgent(model);
+            return RedirectToAction("Index");
         }
     }
 }

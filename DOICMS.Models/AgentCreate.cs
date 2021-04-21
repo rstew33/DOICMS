@@ -9,6 +9,8 @@ namespace DOICMS.Models
 {
     public class AgentCreate
     {
+       // [Key]
+       // public int AgentID { get; set; }
         public int LicenseNumber { get; set; }
         [Display(Name = "Agent Name")]
         public string Name { get; set; }
