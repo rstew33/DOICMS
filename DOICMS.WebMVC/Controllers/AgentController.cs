@@ -89,5 +89,26 @@ namespace DOICMS.WebMVC.Controllers
             ModelState.AddModelError("", "The agent could not be updated");
             return View(model);
         }
+        [ActionName("AgentDelete")]
+        public ActionResult AgentDelete(int id)
+        {
+            var svc = new AgentService();
+            var model = svc.GetAgentByID(id);
+
+            return View(model);
+        }
+        [HttpPost]
+        [ActionName("AgentDelete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteAgent(int id)
+        {
+            var service = new AgentService();
+
+            service.DeleteAgent(id);
+
+            TempData["Save Result"] = "The agent was removed.";
+
+            return RedirectToAction("Index");
+        }
     }
 }

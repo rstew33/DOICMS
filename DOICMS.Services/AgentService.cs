@@ -89,5 +89,19 @@ namespace DOICMS.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        public bool DeleteAgent(int agentID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Agents
+                        .Single(e => e.AgentID == agentID);
+
+                ctx.Agents.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

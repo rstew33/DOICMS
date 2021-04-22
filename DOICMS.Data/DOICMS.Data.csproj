@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Agent.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Insurer.cs" />
     <Compile Include="Migrations\202104210005518_InitialCreate.cs" />
     <Compile Include="Migrations\202104210005518_InitialCreate.Designer.cs">
       <DependentUpon>202104210005518_InitialCreate.cs</DependentUpon>
@@ -63,6 +64,10 @@
     <Compile Include="Migrations\202104210008484_InitialMigration.cs" />
     <Compile Include="Migrations\202104210008484_InitialMigration.Designer.cs">
       <DependentUpon>202104210008484_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104221656168_AddInsurer.cs" />
+    <Compile Include="Migrations\202104221656168_AddInsurer.Designer.cs">
+      <DependentUpon>202104221656168_AddInsurer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104210008484_InitialMigration.resx">
       <DependentUpon>202104210008484_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104221656168_AddInsurer.resx">
+      <DependentUpon>202104221656168_AddInsurer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

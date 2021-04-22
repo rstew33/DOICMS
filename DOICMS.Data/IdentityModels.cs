@@ -32,6 +32,7 @@ namespace DOICMS.Data
             return new ApplicationDbContext();
         }
         public DbSet<Agent> Agents { get; set; }
+        public DbSet<Insurer> Insurers { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AgentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InsurerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -239,6 +240,9 @@
     <Content Include="Views\Agent\Create.cshtml" />
     <Content Include="Views\Agent\AgentDetails.cshtml" />
     <Content Include="Views\Agent\AgentEdit.cshtml" />
+    <Content Include="Views\Agent\AgentDelete.cshtml" />
+    <Content Include="Views\Insurer\Index.cshtml" />
+    <Content Include="Views\Agent\InsurerCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

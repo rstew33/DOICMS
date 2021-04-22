@@ -26,6 +26,10 @@
                     {
                         <li>@Html.ActionLink("Agents", "Index", "Agent")</li>
                     }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Insurers", "Index", "Insurer")</li>
+                    }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
