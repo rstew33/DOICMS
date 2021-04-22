@@ -237,6 +237,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Agent\Index.cshtml" />
     <Content Include="Views\Agent\Create.cshtml" />
+    <Content Include="Views\Agent\AgentDetails.cshtml" />
+    <Content Include="Views\Agent\AgentEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -28,5 +28,66 @@ namespace DOICMS.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        public IEnumerable<AgentListItem> GetAgents()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Agents
+                    .Select(
+                        e =>
+                        new AgentListItem
+                        {
+                            AgentID = e.AgentID,
+                            LicenseNumber = e.LicenseNumber,
+                            Name = e.Name,
+                            Email = e.Email,
+                            Address = e.Address,
+                            PhoneNumber = e.PhoneNumber
+                        }
+                        );
+
+                return query.ToArray();
+            }
+        }
+        public AgentDetail GetAgentByID(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Agents
+                        .Single(e => e.AgentID == id);
+                return
+                    new AgentDetail
+                    {
+                        AgentID = entity.AgentID,
+                        LicenseNumber = entity.LicenseNumber,
+                        Name = entity.Name,
+                        Email = entity.Email,
+                        Address = entity.Address,
+                        PhoneNumber = entity.PhoneNumber
+                    };
+
+            }
+        }
+        public bool UpdateAgent (AgentEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Agents
+                        .Single(e => e.AgentID == model.AgentID);
+                entity.LicenseNumber = model.LicenseNumber;
+                entity.Name = model.Name;
+                entity.Email = model.Email;
+                entity.Address = model.Email;
+                entity.PhoneNumber = model.PhoneNumber;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
