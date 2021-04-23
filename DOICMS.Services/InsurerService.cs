@@ -10,7 +10,7 @@ namespace DOICMS.Services
 {
     public class InsurerService
     {
-        public bool CreateInsurer(InsurerCreate model)
+        public bool InsurerCreate(InsurerCreate model)
         {
             var entity =
                 new Insurer()
@@ -19,7 +19,7 @@ namespace DOICMS.Services
                     Email = model.Email,
                     Address = model.Address,
                     PhoneNumber = model.PhoneNumber,
-                    Type = (Insurer._Type)model.Type
+                    Type = (Data.InsurerTypes)model.Type
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -44,11 +44,62 @@ namespace DOICMS.Services
                             Email = e.Email,
                             Address = e.Address,
                             PhoneNumber = e.PhoneNumber,
-                            Type = (InsurerListItem._Type)(Insurer._Type)e.Type
+                            Type = (Models.InsurerTypes)e.Type
                         }
                         );
 
                 return query.ToArray();
+            }
+        }
+        public InsurerDetail GetInsurerByID(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Insurers
+                        .Single(e => e.InsurerID == id);
+                return
+                    new InsurerDetail
+                    {
+                        InsurerID = entity.InsurerID,
+                        Name = entity.Name,
+                        Email = entity.Email,
+                        Address = entity.Address,
+                        PhoneNumber = entity.PhoneNumber,
+                        Type = (Models.InsurerTypes)entity.Type
+                    };
+
+            }
+        }
+        public bool UpdateInsurer(InsurerEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Insurers
+                        .Single(e => e.InsurerID == model.InsurerID);
+                entity.Name = model.Name;
+                entity.Email = model.Email;
+                entity.Address = model.Email;
+                entity.PhoneNumber = model.PhoneNumber;
+                entity.Type = (Data.InsurerTypes)model.Type;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteInsurer(int insurerID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Insurers
+                        .Single(e => e.InsurerID == insurerID);
+
+                ctx.Insurers.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

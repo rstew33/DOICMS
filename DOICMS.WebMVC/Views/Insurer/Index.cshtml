@@ -4,10 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Insurers</h2>
+<label>Total Insurers:</label> @ViewBag.TotalCount
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "InsurerCreate")
 </p>
 <table class="table">
     <tr>
@@ -22,6 +23,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
         </th>
         <th></th>
     </tr>
@@ -41,9 +45,12 @@
             @Html.DisplayFor(modelItem => item.PhoneNumber)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.InsurerID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.InsurerID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.InsurerID })
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "InsurerEdit", new { id=item.InsurerID }) |
+            @Html.ActionLink("Details", "InsurerDetails", new { id=item.InsurerID }) |
+            @Html.ActionLink("Delete", "InsurerDelete", new { id=item.InsurerID })
         </td>
     </tr>
 }

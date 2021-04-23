@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DOICMS.Data
 {
+    public enum InsurerTypes { Auto, Home, Commercial, Other };
     public class Insurer
     {
             [Key]
@@ -15,8 +16,7 @@ namespace DOICMS.Data
             public string Email { get; set; }
             public string Address { get; set; }
             public string PhoneNumber { get; set; }
-            public enum _Type { Auto, Home, Commercial, Other };
-            public _Type Type { get; set; }
+            public InsurerTypes Type { get; set; }
         // public virtual List<Complaint> Complaints - fk of complaints - for each
 
     }

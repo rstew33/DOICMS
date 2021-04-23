@@ -242,7 +242,9 @@
     <Content Include="Views\Agent\AgentEdit.cshtml" />
     <Content Include="Views\Agent\AgentDelete.cshtml" />
     <Content Include="Views\Insurer\Index.cshtml" />
-    <Content Include="Views\Agent\InsurerCreate.cshtml" />
+    <Content Include="Views\Insurer\InsurerCreate.cshtml" />
+    <Content Include="Views\Insurer\InsurerDetails.cshtml" />
+    <Content Include="Views\Insurer\InsurerEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

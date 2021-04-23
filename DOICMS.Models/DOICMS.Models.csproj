@@ -59,6 +59,8 @@
     <Compile Include="AgentListItem.cs" />
     <Compile Include="AgentEdit.cs" />
     <Compile Include="InsurerCreate.cs" />
+    <Compile Include="InsurerDetail.cs" />
+    <Compile Include="InsurerEdit.cs" />
     <Compile Include="InsurerListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
