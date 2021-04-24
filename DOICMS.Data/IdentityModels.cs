@@ -33,6 +33,11 @@ namespace DOICMS.Data
         }
         public DbSet<Agent> Agents { get; set; }
         public DbSet<Insurer> Insurers { get; set; }
+        public DbSet<Investigator> Investigators { get; set; }
+        public DbSet<Consumer> Consumers { get; set; }
+        public DbSet<AdminAction> AdminActions { get; set; }
+        public DbSet<Complaints> Complaints { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

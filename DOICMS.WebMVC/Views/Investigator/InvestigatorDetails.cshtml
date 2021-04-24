@@ -1,0 +1,58 @@
+﻿@model DOICMS.Models.InvestigatorDetail
+
+@{
+    ViewBag.Title = "InvestigatorDetails";
+}
+
+<h2>InvestigatorDetails</h2>
+
+<div>
+    <h4>InvestigatorDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InvestigatorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvestigatorID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InvestigatorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

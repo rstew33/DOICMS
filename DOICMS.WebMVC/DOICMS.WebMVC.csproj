@@ -169,8 +169,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AgentController.cs" />
+    <Compile Include="Controllers\ConsumerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsurerController.cs" />
+    <Compile Include="Controllers\InvestigatorController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -245,6 +247,13 @@
     <Content Include="Views\Insurer\InsurerCreate.cshtml" />
     <Content Include="Views\Insurer\InsurerDetails.cshtml" />
     <Content Include="Views\Insurer\InsurerEdit.cshtml" />
+    <Content Include="Views\Insurer\InsurerDelete.cshtml" />
+    <Content Include="Views\Investigator\Index.cshtml" />
+    <Content Include="Views\Investigator\InvestigatorCreate.cshtml" />
+    <Content Include="Views\Investigator\InvestigatorDetails.cshtml" />
+    <Content Include="Views\Investigator\InvestigatorEdit.cshtml" />
+    <Content Include="Views\Investigator\InvestigatorDelete.cshtml" />
+    <Content Include="Views\Consumer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -54,14 +54,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgentCreate.cs" />
-    <Compile Include="AgentDetail.cs" />
-    <Compile Include="AgentListItem.cs" />
-    <Compile Include="AgentEdit.cs" />
-    <Compile Include="InsurerCreate.cs" />
-    <Compile Include="InsurerDetail.cs" />
-    <Compile Include="InsurerEdit.cs" />
-    <Compile Include="InsurerListItem.cs" />
+    <Compile Include="AdminAction\AdminActionCreate.cs" />
+    <Compile Include="AdminAction\AdminActionDetail.cs" />
+    <Compile Include="AdminAction\AdminActionEdit.cs" />
+    <Compile Include="AdminAction\AdminActionListItem.cs" />
+    <Compile Include="Agent\AgentCreate.cs" />
+    <Compile Include="Agent\AgentDetail.cs" />
+    <Compile Include="Agent\AgentListItem.cs" />
+    <Compile Include="Agent\AgentEdit.cs" />
+    <Compile Include="Complaint\ComplaintCreate.cs" />
+    <Compile Include="Complaint\ComplaintDetail.cs" />
+    <Compile Include="Complaint\ComplaintEdit.cs" />
+    <Compile Include="Complaint\ComplaintListItem.cs" />
+    <Compile Include="Consumer\ConsumerCreate.cs" />
+    <Compile Include="Consumer\ConsumerDetail.cs" />
+    <Compile Include="Consumer\ConsumerEdit.cs" />
+    <Compile Include="Consumer\ConsumerListItem.cs" />
+    <Compile Include="Insurer\InsurerCreate.cs" />
+    <Compile Include="Insurer\InsurerDetail.cs" />
+    <Compile Include="Insurer\InsurerEdit.cs" />
+    <Compile Include="Insurer\InsurerListItem.cs" />
+    <Compile Include="Investigator\InvestigatorCreate.cs" />
+    <Compile Include="Investigator\InvestigatorDetail.cs" />
+    <Compile Include="Investigator\InvestigatorEdit.cs" />
+    <Compile Include="Investigator\InvestigatorListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

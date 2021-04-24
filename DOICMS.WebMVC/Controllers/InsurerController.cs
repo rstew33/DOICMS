@@ -98,5 +98,17 @@ namespace DOICMS.WebMVC.Controllers
 
             return View(model);
         }
+        [HttpPost]
+        [ActionName("InsurerDelete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteInsurer (int id)
+        {
+            var service = new InsurerService();
+
+            service.DeleteInsurer(id);
+
+            TempData["Save Result"] = ("The insurer was removed");
+            return RedirectToAction("Index");
+        }
     }
 }

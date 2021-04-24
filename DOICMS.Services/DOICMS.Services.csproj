@@ -55,7 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgentService.cs" />
+    <Compile Include="ConsumerService.cs" />
     <Compile Include="InsurerService.cs" />
+    <Compile Include="InvestigatorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
