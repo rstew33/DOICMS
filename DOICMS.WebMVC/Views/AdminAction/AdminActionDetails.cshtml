@@ -1,0 +1,58 @@
+﻿@model DOICMS.Models.AdminActionDetail
+
+@{
+    ViewBag.Title = "AdminActionDetails";
+}
+
+<h2>AdminActionDetails</h2>
+
+<div>
+    <h4>AdminActionDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminActionID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminActionID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvestigatorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvestigatorID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsurerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsurerID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "AdminActionEdit", new { id = Model.AdminActionID  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -168,7 +168,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminActionController.cs" />
     <Compile Include="Controllers\AgentController.cs" />
+    <Compile Include="Controllers\ComplaintController.cs" />
     <Compile Include="Controllers\ConsumerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsurerController.cs" />
@@ -254,6 +256,20 @@
     <Content Include="Views\Investigator\InvestigatorEdit.cshtml" />
     <Content Include="Views\Investigator\InvestigatorDelete.cshtml" />
     <Content Include="Views\Consumer\Index.cshtml" />
+    <Content Include="Views\Consumer\ConsumerCreate.cshtml" />
+    <Content Include="Views\Consumer\ConsumerDetails.cshtml" />
+    <Content Include="Views\Consumer\ConsumerEdit.cshtml" />
+    <Content Include="Views\Consumer\ConsumerDelete.cshtml" />
+    <Content Include="Views\AdminAction\Index.cshtml" />
+    <Content Include="Views\AdminAction\AdminActionCreate.cshtml" />
+    <Content Include="Views\AdminAction\AdminActionDetails.cshtml" />
+    <Content Include="Views\AdminAction\AdminActionEdit.cshtml" />
+    <Content Include="Views\AdminAction\AdminActionDelete.cshtml" />
+    <Content Include="Views\Complaint\Index.cshtml" />
+    <Content Include="Views\Complaint\ComplaintCreate.cshtml" />
+    <Content Include="Views\Complaint\ComplaintDetails.cshtml" />
+    <Content Include="Views\Complaint\ComplaintEdit.cshtml" />
+    <Content Include="Views\Complaint\ComplaintDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

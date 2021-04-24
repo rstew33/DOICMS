@@ -1,0 +1,87 @@
+﻿@model IEnumerable<DOICMS.Models.ComplaintListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ComplaintCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ComplaintID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InvestigatorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdminActionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InsurerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConsumerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComplaintDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resolved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateSubmitted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCompleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComplaintID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InvestigatorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminActionID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsurerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConsumerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComplaintDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resolved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateSubmitted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCompleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "ComplaintEdit", new { id=item.ComplaintID }) |
+            @Html.ActionLink("Details", "ComplaintDetails", new { id = item.ComplaintID }) |
+            @Html.ActionLink("Delete", "ComplaintDelete", new { id = item.ComplaintID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -56,7 +56,7 @@
   <ItemGroup>
     <Compile Include="AdminAction.cs" />
     <Compile Include="Agent.cs" />
-    <Compile Include="Complaints.cs" />
+    <Compile Include="Complaint.cs" />
     <Compile Include="Consumer.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Insurer.cs" />
@@ -81,6 +81,14 @@
     <Compile Include="Migrations\202104241254442_AddModels.Designer.cs">
       <DependentUpon>202104241254442_AddModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104241348449_Complaint.cs" />
+    <Compile Include="Migrations\202104241348449_Complaint.Designer.cs">
+      <DependentUpon>202104241348449_Complaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104241352598_FixedComplaint.cs" />
+    <Compile Include="Migrations\202104241352598_FixedComplaint.Designer.cs">
+      <DependentUpon>202104241352598_FixedComplaint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104241254442_AddModels.resx">
       <DependentUpon>202104241254442_AddModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104241348449_Complaint.resx">
+      <DependentUpon>202104241348449_Complaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104241352598_FixedComplaint.resx">
+      <DependentUpon>202104241352598_FixedComplaint.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

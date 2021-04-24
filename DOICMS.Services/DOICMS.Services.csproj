@@ -55,10 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgentService.cs" />
+    <Compile Include="ComplaintService.cs" />
     <Compile Include="ConsumerService.cs" />
     <Compile Include="InsurerService.cs" />
     <Compile Include="InvestigatorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AdminActionService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

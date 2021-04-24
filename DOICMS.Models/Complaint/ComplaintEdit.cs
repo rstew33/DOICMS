@@ -8,6 +8,7 @@ namespace DOICMS.Models
 {
     public class ComplaintEdit
     {
+        public int ComplaintID { get; set; }
         public int InvestigatorID { get; set; }//[fk - Investigators]
         public int? AdminActionID { get; set; } //[fk - AdminActions]
         public int? AgentID { get; set; }//[fk - Agents]

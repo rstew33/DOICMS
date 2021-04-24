@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DOICMS.Data
 {
-    public class Complaints
+    public class Complaint
     {
         [Key] 
         public int ComplaintID { get; set; }

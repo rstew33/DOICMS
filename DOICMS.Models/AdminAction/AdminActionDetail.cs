@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DOICMS.Models
 {
-    class AdminActionDetail
+    public class AdminActionDetail
     {
         public int AdminActionID { get; set; }
         public string OrderType { get; set; }

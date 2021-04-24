@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DOICMS.Models.AdminActionListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AdminActionCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AdminActionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InvestigatorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InsurerID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminActionID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InvestigatorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsurerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "AdminActionEdit", new { id = item.AdminActionID }) |
+            @Html.ActionLink("Details", "AdminActionDetails", new { id = item.AdminActionID }) |
+            @Html.ActionLink("Delete", "AdminActionDelete", new { id = item.AdminActionID })
+        </td>
+    </tr>
+}
+
+</table>
