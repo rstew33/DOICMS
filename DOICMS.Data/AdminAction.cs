@@ -14,6 +14,7 @@ namespace DOICMS.Data
     [Required] public int InvestigatorID { get; set; } //[fk - Investigators]
     public int? AgentID { get; set; } //nullable
     public int? InsurerID { get; set; } //nullable
+    //public int? ComplaintID { get; set; }
 
     }
 }

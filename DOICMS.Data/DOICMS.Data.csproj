@@ -89,6 +89,18 @@
     <Compile Include="Migrations\202104241352598_FixedComplaint.Designer.cs">
       <DependentUpon>202104241352598_FixedComplaint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104251336449_FK.cs" />
+    <Compile Include="Migrations\202104251336449_FK.Designer.cs">
+      <DependentUpon>202104251336449_FK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104261619022_FK2.cs" />
+    <Compile Include="Migrations\202104261619022_FK2.Designer.cs">
+      <DependentUpon>202104261619022_FK2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104261629345_FK3.cs" />
+    <Compile Include="Migrations\202104261629345_FK3.Designer.cs">
+      <DependentUpon>202104261629345_FK3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -117,6 +129,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104241352598_FixedComplaint.resx">
       <DependentUpon>202104241352598_FixedComplaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104251336449_FK.resx">
+      <DependentUpon>202104251336449_FK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104261619022_FK2.resx">
+      <DependentUpon>202104261619022_FK2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104261629345_FK3.resx">
+      <DependentUpon>202104261629345_FK3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

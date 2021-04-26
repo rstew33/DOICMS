@@ -15,6 +15,7 @@ namespace DOICMS.Services
             var entity =
                 new Complaint()
                 {
+                    InvestigatorID = model.InvestigatorID,
                     AdminActionID = model.AdminActionID,
                     AgentID = model.AgentID,
                     InsurerID = model.InsurerID,
@@ -43,10 +44,16 @@ namespace DOICMS.Services
                         new ComplaintListItem
                         {
                             ComplaintID = e.ComplaintID,
+                            InvestigatorID = e.InvestigatorID,
+                            InvestigatorName = e.Investigator.Name,
                             AdminActionID = e.AdminActionID,
+                            OrderType = e.AdminAction.OrderType,
                             AgentID = e.AgentID,
+                            AgentName = e.Agent.Name,
                             InsurerID = e.InsurerID,
+                            InsurerName = e.Insurer.Name,
                             ConsumerID = e.ConsumerID,
+                            ConsumerName = e.Consumer.Name,
                             ComplaintDesc = e.ComplaintDesc,
                             Resolved = e.Resolved,
                             DateSubmitted = e.DateSubmitted,
@@ -68,6 +75,7 @@ namespace DOICMS.Services
                 return
                     new ComplaintDetail
                     {
+                        InvestigatorID = entity.InvestigatorID,
                         ComplaintID = entity.ComplaintID,
                         AdminActionID = entity.AdminActionID,
                         AgentID = entity.AgentID,
@@ -89,6 +97,7 @@ namespace DOICMS.Services
                     ctx
                         .Complaints
                         .Single(e => e.ComplaintID == model.ComplaintID);
+                entity.InvestigatorID = model.InvestigatorID;
                 entity.AgentID = model.AgentID;
                 entity.InsurerID = model.InsurerID;
                 entity.ConsumerID = model.ConsumerID;

@@ -15,19 +15,19 @@
             @Html.DisplayNameFor(model => model.ComplaintID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.InvestigatorID)
+            @Html.DisplayNameFor(model => model.InvestigatorName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AdminActionID)
+            @Html.DisplayNameFor(model => model.OrderType)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AgentID)
+            @Html.DisplayNameFor(model => model.AgentName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.InsurerID)
+            @Html.DisplayNameFor(model => model.InsurerName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ConsumerID)
+            @Html.DisplayNameFor(model => model.ConsumerName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ComplaintDesc)
@@ -45,43 +45,43 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ComplaintID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InvestigatorID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AdminActionID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AgentID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InsurerID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ConsumerID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ComplaintDesc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Resolved)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateSubmitted)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateCompleted)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "ComplaintEdit", new { id=item.ComplaintID }) |
-            @Html.ActionLink("Details", "ComplaintDetails", new { id = item.ComplaintID }) |
-            @Html.ActionLink("Delete", "ComplaintDelete", new { id = item.ComplaintID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ComplaintID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.InvestigatorName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AgentName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.InsurerName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ConsumerName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ComplaintDesc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Resolved)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateSubmitted)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateCompleted)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "ComplaintEdit", new { id = item.ComplaintID }) |
+        @Html.ActionLink("Details", "ComplaintDetails", new { id = item.ComplaintID }) |
+        @Html.ActionLink("Delete", "ComplaintDelete", new { id = item.ComplaintID })
+    </td>
+</tr>
 }
 
 </table>

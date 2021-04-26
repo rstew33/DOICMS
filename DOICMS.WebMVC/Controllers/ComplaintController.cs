@@ -56,6 +56,8 @@ namespace DOICMS.WebMVC.Controllers
             var model =
                 new ComplaintEdit
                 {
+                    ComplaintID = detail.ComplaintID,
+                    InvestigatorID = detail.InvestigatorID,
                     AdminActionID = detail.AdminActionID,
                     AgentID = detail.AgentID,
                     InsurerID = detail.InsurerID,
