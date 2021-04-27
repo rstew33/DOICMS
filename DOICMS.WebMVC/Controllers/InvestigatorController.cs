@@ -46,7 +46,7 @@ namespace DOICMS.WebMVC.Controllers
         {
             var svc = new InvestigatorService();
             var model = svc.GetInvestigatorByID(id);
-
+            ViewBag.CompList = model.ComplaintsInv;
             return View(model);
         }
         public ActionResult InvestigatorEdit(int id)
