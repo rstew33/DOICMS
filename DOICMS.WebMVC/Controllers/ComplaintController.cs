@@ -1,4 +1,5 @@
-﻿using DOICMS.Models;
+﻿using DOICMS.Data;
+using DOICMS.Models;
 using DOICMS.Services;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,11 @@ namespace DOICMS.WebMVC.Controllers
         }
         public ActionResult ComplaintCreate()
         {
+            //ComplaintCreate model = new ComplaintCreate();
+            //using (ApplicationDbContext db = new ApplicationDbContext)
+            //{
+            //    model.Investigator = new SelectList(db.Investigators.ToList(), "InvestigatorID", "Name");
+            //}
             return View();
         }
         [HttpPost]

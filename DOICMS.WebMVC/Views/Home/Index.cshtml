@@ -1,28 +1,30 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@model IEnumerable<DOICMS.Models.ComplaintListItem>
 
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
+    <style>
 
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-      opacity: .8; 
-    }
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 450px
+        }
 
-</style>
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+            opacity: .8;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid text-center">
@@ -33,19 +35,81 @@
                 <p><a href="#">Link</a></p>
             </div>
             <div class="col-sm-8 text-left">
-                <h1>Welcome</h1>
+                <h1>IDOI - CMS</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <hr>
-                <h3>Test</h3>
-                <p>Lorem ipsum...</p>
-            </div>
-            <div class="col-sm-2 sidenav">
-                <div class="well">
-                    <p>ADS</p>
-                </div>
-                <div class="well">
-                    <p>ADS</p>
-                </div>
+                <h3>Current Complaints</h3>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ComplaintID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InvestigatorName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OrderType)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AgentName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InsurerName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ConsumerName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ComplaintDesc)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Resolved)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateSubmitted)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateCompleted)
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ComplaintID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InvestigatorName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrderType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AgentName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InsurerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ConsumerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ComplaintDesc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Resolved)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateSubmitted)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateCompleted)
+                            </td>
+                        </tr>
+                    }
+
+                </table>
             </div>
         </div>
     </div>

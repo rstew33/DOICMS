@@ -41,10 +41,11 @@ namespace DOICMS.Services
                             AdminActionID = e.AdminActionID,
                             OrderType = e.OrderType,
                             InvestigatorID = e.InvestigatorID,
+                            InvestigatorName = e.Investigator.Name,
                             AgentID = e.AgentID,
                             InsurerID = e.InsurerID
                         }
-                        );
+                        ); ;
 
                 return query.ToArray();
             }

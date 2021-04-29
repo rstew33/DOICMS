@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DOICMS.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,5 +18,6 @@ namespace DOICMS.Models
         public bool Resolved { get; set; }
         public DateTime DateSubmitted { get; set; }
         public DateTime DateCompleted { get; set; }
+        public IEnumerable<Investigator> Investigator {get; set;}
     }
 }
