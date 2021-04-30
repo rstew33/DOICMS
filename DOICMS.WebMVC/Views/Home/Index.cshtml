@@ -12,12 +12,10 @@
 
     <style>
 
-        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
         .row.content {
             height: 450px
         }
 
-        /* Set gray background color and 100% height */
         .sidenav {
             padding-top: 20px;
             background-color: #f1f1f1;
@@ -30,13 +28,21 @@
     <div class="container-fluid text-center">
         <div class="row content">
             <div class="col-sm-2 sidenav">
-                <p><a href="#">Link</a></p>
-                <p><a href="#">Link</a></p>
-                <p><a href="#">Link</a></p>
+                <h3>Frequent Links</h3>
+                <p>@Html.ActionLink("Create a New Complaint", "ComplaintCreate", "Complaint", null, null)</p>
+                <p>@Html.ActionLink("Create a New Agent", "Create", "Agent", null, null)</p>
+                <p>@Html.ActionLink("Create a New Consumer", "ConsumerCreate", "Consumer", null, null)</p>
             </div>
             <div class="col-sm-8 text-left">
                 <h1>IDOI - CMS</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Welcome to the test version of the Complaint Management System for the Indiana Department of Insurance!
+                <br />
+                <br />
+                On the left, you can navigate to the various popular reporting that is available concerning complaints, registered agents and insurers, and consumers. All other functionality can be found in the dropdown menu at the top of the screen. 
+                <br />
+                <br />
+                Additionally, you can see the list of current complaints below. 
+                </p>
                 <hr>
                 <h3>Current Complaints</h3>
                 <table class="table">
