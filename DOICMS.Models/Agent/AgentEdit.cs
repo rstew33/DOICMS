@@ -10,6 +10,7 @@ namespace DOICMS.Models
     public class AgentEdit
     {
         public int AgentID { get; set; }
+        [Display(Name = "License Number")]
         public int LicenseNumber { get; set; }
         [Display(Name = "Agent Name")]
         public string Name { get; set; }

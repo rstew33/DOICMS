@@ -5,16 +5,78 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace DOICMS.Services
 {
     public class ComplaintService
     {
+        public IEnumerable<SelectListItem> GetAllInvestigators()
+        {
+            var ctx = new ApplicationDbContext();
+            IEnumerable<SelectListItem> list = from s in ctx.Investigators
+                                               select new SelectListItem
+                                               {
+                                                   Selected = false,
+                                                   Text = s.Name,
+                                                   Value = s.InvestigatorID.ToString()
+                                               };
+            return list;
+        }
+        public IEnumerable<SelectListItem> GetAllAgents()
+        {
+            var ctx = new ApplicationDbContext();
+            IEnumerable<SelectListItem> list = from s in ctx.Agents
+                                               select new SelectListItem
+                                               {
+                                                   Selected = false,
+                                                   Text = s.Name,
+                                                   Value = s.AgentID.ToString()
+                                               };
+            return list;
+        }
+        public IEnumerable<SelectListItem> GetAllAdmin()
+        {
+            var ctx = new ApplicationDbContext();
+            IEnumerable<SelectListItem> list = from s in ctx.AdminActions
+                                               select new SelectListItem
+                                               {
+                                                   Selected = false,
+                                                   Text = s.AdminActionID.ToString(),
+                                                   Value = s.AdminActionID.ToString()
+                                               };
+            return list;
+        }
+        public IEnumerable<SelectListItem> GetAllInsurer()
+        {
+            var ctx = new ApplicationDbContext();
+            IEnumerable<SelectListItem> list = from s in ctx.Insurers
+                                               select new SelectListItem
+                                               {
+                                                   Selected = false,
+                                                   Text = s.Name,
+                                                   Value = s.InsurerID.ToString()
+                                               };
+            return list;
+        }
+        public IEnumerable<SelectListItem> GetAllConsumer()
+        {
+            var ctx = new ApplicationDbContext();
+            IEnumerable<SelectListItem> list = from s in ctx.Consumers
+                                               select new SelectListItem
+                                               {
+                                                   Selected = false,
+                                                   Text = s.Name,
+                                                   Value = s.ConsumerID.ToString()
+                                               };
+            return list;
+        }
         public bool ComplaintCreate(ComplaintCreate model)
         {
             var entity =
                 new Complaint()
                 {
+                    InvestigatorID = model.InvestigatorID,
                     AdminActionID = model.AdminActionID,
                     AgentID = model.AgentID,
                     InsurerID = model.InsurerID,
@@ -43,10 +105,16 @@ namespace DOICMS.Services
                         new ComplaintListItem
                         {
                             ComplaintID = e.ComplaintID,
+                            InvestigatorID = e.InvestigatorID,
+                            InvestigatorName = e.Investigator.Name,
                             AdminActionID = e.AdminActionID,
+                            OrderType = e.AdminAction.OrderType,
                             AgentID = e.AgentID,
+                            AgentName = e.Agent.Name,
                             InsurerID = e.InsurerID,
+                            InsurerName = e.Insurer.Name,
                             ConsumerID = e.ConsumerID,
+                            ConsumerName = e.Consumer.Name,
                             ComplaintDesc = e.ComplaintDesc,
                             Resolved = e.Resolved,
                             DateSubmitted = e.DateSubmitted,
@@ -68,6 +136,7 @@ namespace DOICMS.Services
                 return
                     new ComplaintDetail
                     {
+                        InvestigatorID = entity.InvestigatorID,
                         ComplaintID = entity.ComplaintID,
                         AdminActionID = entity.AdminActionID,
                         AgentID = entity.AgentID,
@@ -89,6 +158,7 @@ namespace DOICMS.Services
                     ctx
                         .Complaints
                         .Single(e => e.ComplaintID == model.ComplaintID);
+                entity.InvestigatorID = model.InvestigatorID;
                 entity.AgentID = model.AgentID;
                 entity.InsurerID = model.InsurerID;
                 entity.ConsumerID = model.ConsumerID;

@@ -1,4 +1,5 @@
-﻿using DOICMS.Models;
+﻿using DOICMS.Data;
+using DOICMS.Models;
 using DOICMS.Services;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,16 @@ namespace DOICMS.WebMVC.Controllers
         }
         public ActionResult ComplaintCreate()
         {
-            return View();
+            var service = new ComplaintService();
+            var model = new ComplaintCreate
+            {
+                InvestigatorList = service.GetAllInvestigators(),
+                AdminList = service.GetAllAdmin(),
+                AgentList = service.GetAllAgents(),
+                InsurerList = service.GetAllInsurer(),
+                ConsumerList = service.GetAllConsumer()
+            };
+            return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -56,6 +66,8 @@ namespace DOICMS.WebMVC.Controllers
             var model =
                 new ComplaintEdit
                 {
+                    ComplaintID = detail.ComplaintID,
+                    InvestigatorID = detail.InvestigatorID,
                     AdminActionID = detail.AdminActionID,
                     AgentID = detail.AgentID,
                     InsurerID = detail.InsurerID,

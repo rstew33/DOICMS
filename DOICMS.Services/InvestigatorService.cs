@@ -42,7 +42,7 @@ namespace DOICMS.Services
                             Name = e.Name,
                             Email = e.Email,
                             Address = e.Address,
-                            PhoneNumber = e.PhoneNumber,
+                            PhoneNumber = e.PhoneNumber
                         }
                         );
 
@@ -57,6 +57,8 @@ namespace DOICMS.Services
                     ctx
                         .Investigators
                         .Single(e => e.InvestigatorID == id);
+                var complaintList = ctx.Complaints.Where(p => p.InvestigatorID == id).ToList();
+                complaintList = entity.ComplaintsInv;
                 return
                     new InvestigatorDetail
                     {
@@ -65,6 +67,7 @@ namespace DOICMS.Services
                         Email = entity.Email,
                         Address = entity.Address,
                         PhoneNumber = entity.PhoneNumber,
+                        ComplaintsInv = entity.ComplaintsInv
                     };
 
             }

@@ -1,31 +1,124 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@model IEnumerable<DOICMS.Models.ComplaintListItem>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <style>
+
+        .row.content {
+            height: 450px
+        }
+
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+            opacity: .8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <h3>Frequent Links</h3>
+                <p>@Html.ActionLink("Create a New Complaint", "ComplaintCreate", "Complaint", null, null)</p>
+                <p>@Html.ActionLink("Create a New Agent", "Create", "Agent", null, null)</p>
+                <p>@Html.ActionLink("Create a New Consumer", "ConsumerCreate", "Consumer", null, null)</p>
+            </div>
+            <div class="col-sm-8 text-left">
+                <h1><b>IDOI - Complaint Management System</b></h1>
+                <p>Welcome to the test version of the Complaint Management System for the Indiana Department of Insurance!
+                <br />
+                <br />
+                On the left, you can navigate to the various popular reporting that is available concerning complaints, registered agents and insurers, and consumers. All other functionality can be found in the dropdown menu at the top of the screen. 
+                <br />
+                <br />
+                Additionally, you can see the list of current complaints below. 
+                </p>
+                <hr>
+                <h3>Current Complaints</h3>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ComplaintID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InvestigatorName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OrderType)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AgentName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InsurerName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ConsumerName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ComplaintDesc)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Resolved)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateSubmitted)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateCompleted)
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ComplaintID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InvestigatorName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrderType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AgentName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InsurerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ConsumerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ComplaintDesc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Resolved)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateSubmitted)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateCompleted)
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+</body>
+</html>

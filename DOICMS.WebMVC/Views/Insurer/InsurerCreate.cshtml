@@ -5,7 +5,7 @@
     ViewBag.Title = "CreateInsurer";
 }
 
-<h2>CreateInsurer</h2>
+<h2>Add an Insurer</h2>
 
 
 @using (Html.BeginForm()) 
@@ -13,7 +13,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>InsurerCreate</h4>
+    <h4>Insurer Details</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">

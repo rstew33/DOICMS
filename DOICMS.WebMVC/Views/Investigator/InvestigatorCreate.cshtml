@@ -4,7 +4,7 @@
     ViewBag.Title = "InvestigatorCreate";
 }
 
-<h2>InvestigatorCreate</h2>
+<h2>Add a new Investigator</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>InvestigatorCreate</h4>
+        <h4>New Investigator Details</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

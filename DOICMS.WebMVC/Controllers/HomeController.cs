@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DOICMS.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,13 @@ namespace DOICMS.WebMVC.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
+        {
+            var service = new ComplaintService();
+            var model = service.GetComplaints();
+            ViewBag.TotalCount = model.ToList().Count();
+            return View(model);
+        }
+        public ActionResult Presentation()
         {
             return View();
         }
