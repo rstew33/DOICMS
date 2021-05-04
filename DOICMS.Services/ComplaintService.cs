@@ -5,11 +5,72 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace DOICMS.Services
 {
     public class ComplaintService
     {
+        public IEnumerable<SelectListItem> GetAllInvestigators()
+        {
+            var ctx = new ApplicationDbContext();
+            IEnumerable<SelectListItem> list = from s in ctx.Investigators
+                                               select new SelectListItem
+                                               {
+                                                   Selected = false,
+                                                   Text = s.Name,
+                                                   Value = s.InvestigatorID.ToString()
+                                               };
+            return list;
+        }
+        public IEnumerable<SelectListItem> GetAllAgents()
+        {
+            var ctx = new ApplicationDbContext();
+            IEnumerable<SelectListItem> list = from s in ctx.Agents
+                                               select new SelectListItem
+                                               {
+                                                   Selected = false,
+                                                   Text = s.Name,
+                                                   Value = s.AgentID.ToString()
+                                               };
+            return list;
+        }
+        public IEnumerable<SelectListItem> GetAllAdmin()
+        {
+            var ctx = new ApplicationDbContext();
+            IEnumerable<SelectListItem> list = from s in ctx.AdminActions
+                                               select new SelectListItem
+                                               {
+                                                   Selected = false,
+                                                   Text = s.AdminActionID.ToString(),
+                                                   Value = s.AdminActionID.ToString()
+                                               };
+            return list;
+        }
+        public IEnumerable<SelectListItem> GetAllInsurer()
+        {
+            var ctx = new ApplicationDbContext();
+            IEnumerable<SelectListItem> list = from s in ctx.Insurers
+                                               select new SelectListItem
+                                               {
+                                                   Selected = false,
+                                                   Text = s.Name,
+                                                   Value = s.InsurerID.ToString()
+                                               };
+            return list;
+        }
+        public IEnumerable<SelectListItem> GetAllConsumer()
+        {
+            var ctx = new ApplicationDbContext();
+            IEnumerable<SelectListItem> list = from s in ctx.Consumers
+                                               select new SelectListItem
+                                               {
+                                                   Selected = false,
+                                                   Text = s.Name,
+                                                   Value = s.ConsumerID.ToString()
+                                               };
+            return list;
+        }
         public bool ComplaintCreate(ComplaintCreate model)
         {
             var entity =

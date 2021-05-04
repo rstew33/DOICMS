@@ -22,12 +22,16 @@ namespace DOICMS.WebMVC.Controllers
         }
         public ActionResult ComplaintCreate()
         {
-            //ComplaintCreate model = new ComplaintCreate();
-            //using (ApplicationDbContext db = new ApplicationDbContext)
-            //{
-            //    model.Investigator = new SelectList(db.Investigators.ToList(), "InvestigatorID", "Name");
-            //}
-            return View();
+            var service = new ComplaintService();
+            var model = new ComplaintCreate
+            {
+                InvestigatorList = service.GetAllInvestigators(),
+                AdminList = service.GetAllAdmin(),
+                AgentList = service.GetAllAgents(),
+                InsurerList = service.GetAllInsurer(),
+                ConsumerList = service.GetAllConsumer()
+            };
+            return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

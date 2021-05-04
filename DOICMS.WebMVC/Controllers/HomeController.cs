@@ -16,6 +16,10 @@ namespace DOICMS.WebMVC.Controllers
             ViewBag.TotalCount = model.ToList().Count();
             return View(model);
         }
+        public ActionResult Presentation()
+        {
+            return View();
+        }
 
         public ActionResult About()
         {

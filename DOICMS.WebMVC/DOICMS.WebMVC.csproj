@@ -272,6 +272,8 @@
     <Content Include="Views\Complaint\ComplaintDetails.cshtml" />
     <Content Include="Views\Complaint\ComplaintEdit.cshtml" />
     <Content Include="Views\Complaint\ComplaintDelete.cshtml" />
+    <Content Include="Views\Home\Presentation.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

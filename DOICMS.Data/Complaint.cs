@@ -30,7 +30,7 @@ namespace DOICMS.Data
         public string ComplaintDesc { get; set; }
         public bool Resolved { get; set; }
         [Required] 
-        public DateTime DateSubmitted { get; set; }
-        public DateTime DateCompleted { get; set; }
+        public DateTimeOffset DateSubmitted { get; set; }
+        public DateTimeOffset DateCompleted { get; set; }
     }
 }
